@@ -1,0 +1,33 @@
+<!-- Módulo helloWorld declarado no html -->
+<html ng-app="helloWorld">
+<head>
+
+    <title>Hello World</title>
+
+    <!-- Importação do angular -->
+    <script src="angular.js"></script>
+    <script>
+        //No angular, tudo são módulos
+        
+        //criação do módulo/aplicação helloWorld, importanto junto 0 outros módulos
+        angular.module("helloWorld", []);
+
+        //localiza o módulo e seta nele uma a controller através de uma função
+        angular.module("helloWorld").controller("helloWorldCtrl", function($scope) {
+            //o "scope", quem faz o 2way-binding, injetado na função
+            $scope.message = "Hello World";
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- Declara UMA view com sua respectiva controller -->
+    <div ng-controller="helloWorldCtrl">
+        <!-- acessa as variáveis de $scope da controller -->
+        {{message}}
+        
+    </div>
+
+</body>
+</html>
